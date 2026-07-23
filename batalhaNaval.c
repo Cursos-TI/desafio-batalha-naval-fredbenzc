@@ -6,7 +6,7 @@ void imprimir_tabuleiro(int tab[10][10])
 {
        
     printf("   "); 
-    for (int i = 0; i < = 9; i++) 
+    for (int i = 0; i < 10; i++) 
 	{
         printf(" %d", i);
     }
