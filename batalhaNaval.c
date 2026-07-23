@@ -1,40 +1,60 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-// Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
+void imprimir_tabuleiro(int tab[10][10]) 
+{
+       
+    printf("   "); 
+    for (int i = 0; i < = 9 ';i++) 
+	{
+        printf(" %d", i);
+    }
+    printf("\n");
 
-int main() {
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
+   
+    for (int i = 0; i < 10; i++) 
+	{
+        printf("%d |", i); 
+        for (int j = 0; j < 10; j++) 
+		{
+            printf(" %d", tab[i][j]);
+        }
+        printf("\n");
+    }
+ }
 
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
 
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
+int main()
+ {
+  
+    int tabuleiro[10][10] = {0},tabuleiro_PC[10][10] = {0},linha, coluna,maquina_C,maquina_L;
 
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
+    srand(time(0));
     
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
+	imprimir_tabuleiro(tabuleiro);
+    
+	
+                
+	for(int i=0; i<2;i++)
+	{
+		printf("\n\t %d\xa6 Porta-avioes: Ocupa 5 quadrados. \n\t Digite as COORDENADA\n\n",i+1);
+		
+		for(int j = 0; j < 5; j++)//Jogador adicionas os porta avioes
+		{
+	    	system("color 1E");
+			printf("linha %d ",j );
+			scanf("%d",&linha);
+			printf("coluna %d ",j );
+	    	scanf("%d",&coluna);
+	    	system("cls");
+			tabuleiro[linha][coluna] = 5;	
+	    	imprimir_tabuleiro(tabuleiro); 
+		
+		}
+}
+	
 
-    // Exemplo para habilidade em cruz:
-    // 0 0 1 0 0
-    // 1 1 1 1 1
-    // 0 0 1 0 0
 
     return 0;
 }
